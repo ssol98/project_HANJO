@@ -214,7 +214,7 @@ main .item-wrapper ul .item {
 }
 
 main .item-wrapper ul .item a{
-
+  list-style: none;
 
 }
 
@@ -225,7 +225,6 @@ main .item-wrapper ul .item .item-photo {
   color: black;
   display: block;
   background-image: url("/img/derby3.png");
-  background-color: red;
   background-repeat: round;
 }
 
@@ -240,7 +239,7 @@ main .item-wrapper ul .item .item-title{
   padding-top: 10px;
   color : black;
   display: block;
-
+  list-style: none;
 }
 main .item-wrapper ul .item .item-price{
   width: 100%;

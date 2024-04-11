@@ -27,4 +27,18 @@ public interface ItemService {
      */
     public List<Item> derbyList();
 
+    /**
+     * 스니커즈 리스트 전체 반환
+     * @return
+     */
+
+    public List<Item> sneakersList();
+
+    /**
+     * 로퍼 리스트 전체 반환
+     * @return
+     */
+    public List<Item> loaferList();
+
+
 }

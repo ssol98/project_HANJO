@@ -14,7 +14,6 @@
     request.setAttribute("list", list);
 %>
 
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -109,8 +108,8 @@
                     <c:forEach var="item" items="${list}" varStatus="loop">
                         <c:set var="no" scope="request"></c:set>
                         <li id="" class="item" name="item-1">
-                            <a href="../item_detail/item_detail.jsp?${item.itemNumber}">  <%-- 각 상품마다 item number 지정 --%>
-                                <div class="item-photo" name="">${item.itemImage}</div>
+                            <a href="../item_detail/item_detail.jsp?itemNumber=${item.itemNumber}?categoryNumber=${item.itemCategory}">  <%-- 각 상품마다 item number 지정 --%>
+                                <div class="item-photo" name="" style="background-image: url(${item.itemThumb})"></div>
                                 <div class="item-title" name="">${item.itemName}</div>
                                 <div class="item-price" name="">${item.price}</div>
                             </a>

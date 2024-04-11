@@ -14,6 +14,10 @@ public interface ItemDao {
 
     public List<Item> findByAll() throws SQLException;
 
-    public List<Item> findByDerby() throws SQLException; // 전체목록에서 특정 카테고리 신발 리스트만 where cate_num = ? 로 찾아오기
+    public List<Item> findByDerby() throws SQLException;
+
+    public List<Item> findBySneakers() throws SQLException;
+
+    public List<Item> findByLoafer() throws SQLException;
 
 }
