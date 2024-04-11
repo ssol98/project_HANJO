@@ -1,0 +1,115 @@
+/* 기본값 세팅 */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#top_text {
+  width: 50%;
+  margin: 30px auto;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  margin: 30px auto;
+  background-color: white;
+}
+
+thead tr th {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #48372f;
+  color: #ffffff;
+}
+
+/* 테이블 행 */
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  padding: 8px;
+  text-align: left;
+  text-align: center;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  color: #000;
+}
+
+/* 테이블 올렸을 때 */
+tbody tr:hover {
+  background-color: #d3d3d3;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* 테이블 비율 */
+/* th:nth-child(1),
+td:nth-child(1) {
+  width: 15%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 15%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 15%;
+} */
+
+tr:nth-child(even) {
+  background-color: rgb(243, 245, 237);
+}
+
+/* 하단 버튼 플렉스 박스 */
+#button_flex {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 0.5%;
+  margin-bottom: 2%;
+}
+
+/* 선택삭제 버튼 */
+#check_remove {
+  width: 7%;
+  font-size: large;
+}
+
+/* 전체삭제 버튼 */
+#all_remove {
+  width: 7%;
+  font-size: large;
+  margin-left: 1%;
+  margin-right: 22%;
+}
+
+/* 계속 쇼핑하기 버튼 */
+#move_list {
+  width: 7%;
+  font-size: large;
+}
+
+/* 주문하기 버튼 */
+#order {
+  width: 7%;
+  font-size: large;
+  margin-left: 1%;
+}
+
+/* a태그 밑줄, 색상변경 제거 */
+a {
+  text-decoration: none;
+  color: inherit;
+}

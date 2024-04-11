@@ -1,0 +1,443 @@
+/*
+       인덱스 CSS + 모듈 CSS
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+body {
+  width: 100%;
+  height: 100vh;
+  /* display: flex; */
+  text-align: center;
+  flex-wrap: wrap;
+
+  /* overflow-x: hidden; */
+  /* margin: 0px; */
+
+  /*font-family: "Quicksand", "Poor Story", sans-serif;*/
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+
+  background-color: #dcdcdc;
+
+}
+
+header {
+  height: 30vh;
+  /*background-color: #282828;*/
+  background-image: url(/img/banner.png);
+  background-repeat: round;
+
+  opacity: 82%;
+  padding: 0px;
+}
+
+.head-info {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  top: 0px;
+  z-index: 98;
+
+  position: sticky;
+
+}
+
+.head-info h2 a {
+  float: right;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 12px;
+  text-align: right;
+  color: black;
+  /* text-align: center; */
+  padding: 15px 20px;
+  text-decoration: none;
+
+}
+
+.head-info h2 a:hover {
+  color: wheat;
+  cursor: pointer;
+
+}
+
+#wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex: 1;
+}
+
+#wrapper nav {
+  height: 10vh;
+  background-color: #c8c8c8;
+  padding: 0px 100px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 98;
+
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+
+  opacity: 80%;
+
+  position: sticky;
+  top: 40px;
+
+}
+
+#wrapper nav a {
+  text-decoration: none;
+  color: #282828;
+}
+
+#wrapper nav a:hover div {
+  cursor: pointer;
+  color: #000;
+  font-size: 30px;
+  transition: 0.3s;
+}
+
+#wrapper nav div {
+  font-size: 27px;
+  margin: 2rem 0.5rem;
+}
+
+#content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+main {
+  width: 100vw;
+  margin-top: 40px;
+}
+
+main .item-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+main .item-wrapper .item-option-bar {
+  width: 90%;
+  height: 60px;
+  margin: 0 auto;
+  color: black;
+  display: inline-block;
+}
+
+
+main .item-wrapper .item-option-bar .item-sort {
+  width: 40%;
+  height: 25px;
+  float: left;
+  /*border-bottom: 1px solid black;*/
+  margin: 10px auto;
+}
+
+main .item-wrapper .item-option-bar .item-sort span {
+  margin: 0px 20px;
+  font-size: 15px;
+}
+
+main .item-wrapper .item-option-bar .item-search {
+  width: 40%;
+  height: 25px;
+  float: right;
+  margin: 10px auto;
+
+}
+
+main .item-wrapper .item-option-bar .item-search input {
+  width: 50%;
+  height: 25px;
+  border-width: 0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+main .item-wrapper .item-option-bar .item-search input :focus {
+  outline: none;
+  box-shadow: none;
+}
+
+main .item-wrapper .item-option-bar .item-search button {
+  width: 10%;
+  height: 25px;
+  border-width: 0;
+  margin-left: -63px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+main .item-wrapper .item-option-bar .item-search button :hover {
+  cursor: pointer;
+  color: #8c8c8c;
+}
+
+
+main .item-wrapper ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin : 0 auto;
+
+  padding: 40px 80px;
+  list-style: none;
+}
+
+main .item-wrapper ul .item {
+  width: 20%;
+  height: 400px;
+  margin: 20px 20px;
+  /*border : 1px solid black;*/
+  color : #000000;
+  display: block;
+  text-decoration: none;
+
+}
+
+main .item-wrapper ul .item a{
+
+
+}
+
+main .item-wrapper ul .item .item-photo {
+  width: 100%;
+  height: 75%;
+  padding: 0px;
+  color: black;
+  display: block;
+  background-image: url("/img/derby3.png");
+  background-color: red;
+  background-repeat: round;
+}
+
+main .item-wrapper ul .item :hover{
+  cursor: pointer;
+
+}
+
+main .item-wrapper ul .item .item-title{
+  width: 100%;
+  height: 15%;
+  padding-top: 10px;
+  color : black;
+  display: block;
+
+}
+main .item-wrapper ul .item .item-price{
+  width: 100%;
+  height: 10%;
+  padding: 0px;
+  color : black;
+  display: block;
+
+}
+
+footer {
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+}
+
+footer .footer-corpname {
+  font-size: 100px;
+  color: #000000;
+  margin: 14px 3rem;
+  text-align: left;
+}
+footer .footer-team-members {
+  color: #545e6f;
+  padding: 1px;
+  margin-bottom: 10px;
+}
+footer .footer-copyright {
+  color: #545e6f;
+  padding: 1px;
+  margin-bottom: 10px;
+}
+
+/* to top 버튼 */
+#myBtn {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 20px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: #282828;
+  /* Set a background color */
+  color: white;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 15px;
+  /* Some padding */
+  border-radius: 10px;
+  /* Rounded corners */
+  font-size: 18px;
+  /* Increase font size */
+
+  transition-property: background-color, opacity, visibility;
+  transition-duration: 0.3s, 0.5s, 0.5s;
+}
+
+#myBtn:hover {
+  background-color: #828282;
+  transition: 0.5s;
+  /* Add a dark-grey background on hover */
+}
+
+/* ----  롤링 리스트 -------- */
+section article {
+  display: flex;
+  overflow: hidden;
+}
+
+section article .rolling-list ul {
+  display: flex;
+
+}
+
+section article .rolling-list ul li {
+  width: 589px;
+  height: 276px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin: 20px 10px;
+  padding: 46px 31px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+section .rolling-wrap .rolling-list ul li:nth-child(1) {
+  color: #dcdcdc;
+  background-image: url('/img/rolling1.png');
+  background-repeat: round;
+}
+
+section .rolling-wrap .rolling-list ul li:nth-child(2) {
+  color: #dcdcdc;
+  background-image: url('/img/rolling2.png');
+  background-repeat: round;
+}
+
+section .rolling-wrap .rolling-list ul li:nth-child(3) {
+  color: #dcdcdc;
+  background-image: url('/img/rolling1.png');
+  background-repeat: round;
+}
+
+section .rolling-wrap .rolling-list ul li:nth-child(4) {
+  color: #dcdcdc;
+  background-image: url('/img/rolling2.png');
+  background-repeat: round;
+}
+
+section .rolling-wrap .rolling-list ul li:nth-child(even) {
+  margin-top: 80px;
+}
+
+section .rolling-wrap .rolling-list ul li .image-wrap {
+  padding-right: 30px;
+  width: 150px;
+  flex-shrink: 0;
+}
+
+section .rolling-wrap .rolling-list ul li .image-wrap>img {
+  width: 100%;
+}
+
+section .rolling-wrap .rolling-list ul li .desc {
+  font-family: 'BMJUA';
+}
+
+section .rolling-wrap .rolling-list ul li .desc strong {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+section .rolling-wrap .rolling-list ul li .desc span {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+section .rolling-wrap .rolling-list.original {
+  animation: rollingleft1 70s linear infinite;
+}
+
+section .rolling-wrap .rolling-list.clone {
+  animation: rollingleft2 70s linear infinite;
+}
+
+@keyframes rollingleft1 {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-100%);
+  }
+
+  50.01% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rollingleft2 {
+  0% {
+    transition: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
+}
+/* ----------- 롤링 리스트 END -------- */
+
+
+
+
+
+/* 조금 반응형 */
+@media screen and (max-width: 560px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  main {
+    padding: 0em 0 1em 0;
+  }
+}

@@ -1,0 +1,332 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+section.notice {
+    padding: 40px 0;
+}
+
+.footer {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+
+.footer .footer-corpname {
+    font-size: 100px;
+    color: #000000;
+    margin: 14px 3rem;
+    text-align: left;
+}
+
+.footer .footer-team-members {
+    color: #545e6f;
+    padding: 1px;
+    margin-bottom: 10px;
+}
+
+.footer .footer-copyright {
+    color: #545e6f;
+    padding: 1px;
+    margin-bottom: 10px;
+}
+
+.page-title {
+    margin-bottom: 60px;
+}
+
+.page-title h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-title .list {
+    font-size: 30px;
+    height: 155px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.page-title .list .list-left {
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.page-title .list .list-left h3{
+    margin-bottom: 20px;
+}
+
+.page-title .list .list-left .list-left-desc {
+    color: gray;
+    font-size: 20px;
+    text-align: center;
+}
+
+.page-title .list .list-right {
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+.page-title .list .list-right h3{
+    margin-bottom: 10px;
+}
+
+.page-title .list .list-right .list-right-desc{
+    color: gray;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+#board-search .search-window {
+    padding: 15px 0;
+    background-color: #f9f7f9;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+
+}
+
+#board-search .search-window .search-wrap {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 362px;
+    align-items: center;
+}
+
+#board-search .search-window .search-wrap input {
+    height: 40px;
+    font-size: 14px;
+    padding: 7px 14px;
+    border: 1px solid #ccc;
+    width: 190px;
+    margin-left: 10px;
+}
+
+#board-search .search-window .search-wrap input:focus {
+    border-color: #333;
+    outline: 0;
+    border-width: 1px;
+}
+
+#board-search .search-window .search-wrap .btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 78px;
+    padding: 0;
+    font-size: 15px;
+}
+
+.board-table {
+    font-size: 13px;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.board-table a {
+    color: #333;
+    display: inline-block;
+    line-height: 1.4;
+    word-break: break-all;
+    vertical-align: middle;
+}
+
+.board-table a:hover {
+    text-decoration: underline;
+}
+
+.board-table th {
+    text-align: center;
+}
+
+.board-table .th-num {
+    width: 100px;
+    text-align: center;
+}
+
+.board-table .th-date {
+    width: 200px;
+}
+
+.board-table th, .board-table td {
+    padding: 14px 0;
+}
+
+.board-table tbody td {
+    border-top: 1px solid #e7e7e7;
+    text-align: center;
+}
+
+.board-table tbody th {
+    padding-left: 28px;
+    padding-right: 14px;
+    border-top: 1px solid #e7e7e7;
+    text-align: left;
+}
+
+.board-table tbody th p {
+    display: none;
+}
+
+#board-write .search-window {
+    padding: 15px 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+#board-write .search-window .search-wrap .btn {
+    width: 78px;
+    height: 40px;
+    padding: 0;
+    font-size: 15px;
+}
+
+#type {
+    margin-left: 18px;
+    height: 90%;
+    font-size: 14px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0 30px;
+    font-size: 15px;
+    font-weight: 400;
+    background: transparent;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn-dark {
+    background: #555;
+    color: #fff;
+}
+
+.btn-dark:hover .btn-dark:focus {
+    background: #373737;
+    border-color: #373737;
+    color: #fff;
+}
+
+.btn-dark {
+    background: #555;
+    color: #fff;
+}
+
+.btn-dark:hover{
+    background-color: #282828;
+    border-color: #373737;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+* {
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.container {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.blind {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px;
+}
+
+.page {
+    text-align: center;
+}
+
+.pagination {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.pagination li {
+    display: inline;
+    text-align: center;
+}
+
+.pagination a {
+    float: left;
+    display: block;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    line-height: 2;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.first:hover .last:hover .back:hover .next:hover {
+    color: gray;
+}
+
+.pagination a.active {
+    cursor: default;
+    background-color: black;
+    color: white;
+    outline: none;
+}
+
+.modal .num {
+    margin-left: 3px;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.modal .num:hover {
+    background-color: black;
+    color: white;
+}
