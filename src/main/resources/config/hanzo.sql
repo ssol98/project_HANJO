@@ -249,9 +249,10 @@ drop sequence board_seq;
 
 
 
-
-
-
+-- 카테고리번호, 제품번호, 제품이름, 제품가격, 제품정보(설명), //판매여부
+SELECT cate_num, item_num, item_name, item_price, item_info, item_thumb, item_img
+FROM item
+WHERE item_num = 1;
 
 
 

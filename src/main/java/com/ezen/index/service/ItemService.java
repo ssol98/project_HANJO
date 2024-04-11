@@ -27,4 +27,6 @@ public interface ItemService {
      */
     public List<Item> derbyList();
 
+    public Item itemDetail(int categoryNumber, int itemNumber);
+
 }

@@ -38,4 +38,12 @@ public class ItemServiceImpl implements ItemService {
             throw new RuntimeException(e);
         }
     }
+
+    public Item itemDetail(int categoryNumber, int itemNumber) {
+        try {
+            return itemDao.itemDetail(categoryNumber, itemNumber);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

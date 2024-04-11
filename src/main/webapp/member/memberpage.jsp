@@ -61,6 +61,9 @@
     <!-- header start -->
     <jsp:include page="/module/header.jsp"/>
     <!-- header end -->
+    <!-- nav start -->
+    <jsp:include page="/module/nav.jsp"/>
+    <!-- nav start -->
 
     <!-- Page Content -->
     <div id="page-content-wrapper">

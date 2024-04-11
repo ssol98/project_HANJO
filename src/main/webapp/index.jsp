@@ -2,7 +2,8 @@
 <%@ page import="com.ezen.index.service.ItemService" %>
 <%@ page import="com.ezen.index.service.ItemServiceImpl" %>
 <%@ page import="com.ezen.index.dto.Item" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%--
     인덱스 페이지
 --%>
 
@@ -109,7 +110,7 @@
                     <c:forEach var="item" items="${list}" varStatus="loop">
                         <c:set var="no" scope="request"></c:set>
                         <li id="" class="item" name="item-1">
-                            <a href="../item_detail/item_detail.jsp?${item.itemNumber}">  <%-- 각 상품마다 item number 지정 --%>
+                            <a href="../item_detail/item_detail.jsp?categoryNumber=${item.itemCategory}&itemNumber=${item.itemNumber}">  <%-- 각 상품마다 item number 지정 --%>
                                 <div class="item-photo" name="">${item.itemImage}</div>
                                 <div class="item-title" name="">${item.itemName}</div>
                                 <div class="item-price" name="">${item.price}</div>

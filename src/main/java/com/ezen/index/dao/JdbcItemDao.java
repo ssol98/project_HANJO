@@ -23,6 +23,7 @@ public class JdbcItemDao implements ItemDao {
 
     /**
      * DB에서 카테고리 관련 정보 가져오기
+     *
      * @return
      * @throws SQLException
      */
@@ -64,6 +65,7 @@ public class JdbcItemDao implements ItemDao {
 
     /**
      * DB에서 상품 목록 가져오기
+     *
      * @return
      * @throws SQLException
      */
@@ -108,6 +110,7 @@ public class JdbcItemDao implements ItemDao {
 
     /**
      * 더비 상품 리스트 가져오기
+     *
      * @return
      * @throws SQLException
      */
@@ -151,6 +154,50 @@ public class JdbcItemDao implements ItemDao {
         return list;
     }
 
+    /**
+     * 제품 상세보기
+     *
+     * @return
+     * @throws SQLException
+     */
+    public Item itemDetail(int categoryNumber, int itemNumber) throws SQLException {
+        StringBuilder sql = new StringBuilder();
+        Item item = null;
+        item = new Item();
+
+        sql.append(" SELECT cate_num, item_num, item_name, item_price, item_info, item_thumb, item_img")
+                .append(" FROM ITEM")
+                .append(" WHERE cate_num=? and item_num=?");
+
+        Connection conn = connectionFactory.getConnection();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            pstmt = conn.prepareStatement(sql.toString());
+            pstmt.setInt(1, categoryNumber);
+            pstmt.setInt(2, itemNumber);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                item.setItemCategory(rs.getString("cate_num"));
+                item.setItemNumber(rs.getInt("item_num"));
+                item.setItemName(rs.getString("item_name"));
+                item.setPrice(rs.getString("item_price"));
+                item.setItemInfo(rs.getString("item_info"));
+                item.setItemThumb(rs.getString("item_thumb"));
+                item.setItemImage(rs.getString("item_img"));
+            }
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return item;
+    }
+
     /*
      * 테스트를 위한 메인 메소드
      */
@@ -158,8 +205,10 @@ public class JdbcItemDao implements ItemDao {
         ItemDao itemDao = new JdbcItemDao();
         Category category = new Category();
 
-        System.out.println(itemDao.findByCategoryAll());  // DB 카테고리 가져오기 (성공)
-        System.out.println(itemDao.findByAll());  // DB 전체 상품리스트 가져오기 (성공)
-        System.out.println(itemDao.findByDerby());  // DB 특정 카테고리 리스트 가져오기 (성공)
+//        System.out.println(itemDao.findByCategoryAll());  // DB 카테고리 가져오기 (성공)
+//        System.out.println(itemDao.findByAll());  // DB 전체 상품리스트 가져오기 (성공)
+//        System.out.println(itemDao.findByDerby());  // DB 특정 카테고리 리스트 가져오기 (성공)
+
+//        System.out.println(itemDao.itemDetail(10, 4));
     }
 }

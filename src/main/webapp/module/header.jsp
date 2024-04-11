@@ -5,7 +5,7 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <div class="head-info">
-    <img src="../img/logo.png" style="width:300px; height:40px; margin-right: 18%">
+    <a href="/"><img src="../img/logo.png" style="width:300px; height:40px; margin-right: 18%"></a>
     <h2><a href="../member/login.jsp">로그인</a></h2>
     <h2><a href="/member/register.jsp">회원가입</a></h2>
     <h2><a href="../member/memberpage.jsp"><i class="fa-solid fa-user"></i></a></h2>
