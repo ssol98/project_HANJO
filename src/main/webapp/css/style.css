@@ -40,6 +40,11 @@ header {
   padding: 0px;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .head-info {
   display: flex;
   justify-content: right;
@@ -213,7 +218,7 @@ main .item-wrapper ul .item {
 
 }
 
-main .item-wrapper ul .item a{
+main .item-wrapper ul .item{
   list-style: none;
 
 }

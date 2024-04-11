@@ -13,6 +13,8 @@
     ItemService itemService = new ItemServiceImpl();
     List<Item> list = itemService.derbyList();
     request.setAttribute("list", list);
+
+    System.out.println(list);
 %>
 
 <!DOCTYPE html>

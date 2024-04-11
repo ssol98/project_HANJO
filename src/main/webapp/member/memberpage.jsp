@@ -65,7 +65,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <%--nav start--%>
-
+        <jsp:include page="/module/nav.jsp"/>
         <%--nav end--%>
 
 <%--Contents start--%>
