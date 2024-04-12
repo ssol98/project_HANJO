@@ -60,21 +60,20 @@
                         <li>
                             <div class="image-wrap"></div>
                             <div class="desc">
-                                <strong>깔끔한 상품</strong>
-                                <span>테스트</span>
+                                <strong>HANZO CORP.</strong>
                             </div>
                         </li>
                         <li>
                             <div class="image-wrap"></div>
                             <div class="desc">
-                                <strong>이번 주 상품</strong>
+                                <strong>신상품</strong>
 
                             </div>
                         </li>
                         <li>
                             <div class="image-wrap"></div>
                             <div class="desc">
-                                <strong>할인 판매</strong>
+                                <strong>한 조</strong>
 
                             </div>
                         </li>

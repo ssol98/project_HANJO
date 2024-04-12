@@ -4,6 +4,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
+<%
+  String size = request.getParameter("size");
+
+%>
+
 <!DOCTYPE html>
 <html lang="ko">
 

@@ -23,15 +23,25 @@ a {
 
 /* 제품 설명 div */
 #mid_info_div {
-  width: 100%;
+  width: 50%;
   height: 60%;
   float: left;
+  padding-top: 20px;
   text-align: center;
+  margin: 0 auto;
+}
+.img_div{
+  width: 50%;
 }
 
 .item-detail-info{
   width: 50%;
+  height: 80%;
   float: right;
+  font-weight: bold;
+}
+.item-detail-info-div {
+  padding: 20px 0px;
 }
 
 
@@ -56,14 +66,14 @@ a {
 /* 바로결제 버튼 */
 #payment_btn {
   margin-right: 0.5%;
-  width: 10%;
+  width: 15%;
   font-size: large;
 }
 
 /* 장바구니추가 버튼 */
 #cart_btn {
   margin-left: 0.5%;
-  width: 10%;
+  width: 15%;
   font-size: large;
 }
 
