@@ -35,8 +35,9 @@
     <jsp:include page="/module/nav.jsp"/>
     <!-- nav start -->
 
+    <h2 id="mid_info" style="margin-top: 20px">Product Info 제품상세</h2>
+
     <form id="mid_info_div">
-            <h2 id="mid_info">Product Info 제품상세</h2>
 
             <div id="img_div" style="background-image:url(..${item.itemThumb}); width: 300px; height: 300px;"></div>
 
