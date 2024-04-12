@@ -72,7 +72,7 @@ a {
 }
 
 .head-info h2 a:hover {
-  color: wheat;
+  color: red;
   cursor: pointer;
 
 }
