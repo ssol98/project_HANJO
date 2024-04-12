@@ -20,4 +20,5 @@ public interface ItemDao {
 
     public List<Item> findByLoafer() throws SQLException;
 
+    public Item itemDetail(int categoryNumber, int itemNumber) throws SQLException;
 }

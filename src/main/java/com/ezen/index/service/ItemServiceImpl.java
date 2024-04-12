@@ -23,6 +23,7 @@ public class ItemServiceImpl implements ItemService {
 
     /**
      * 전체 상품 리스트 반혼
+     *
      * @return
      */
     @Override
@@ -36,6 +37,7 @@ public class ItemServiceImpl implements ItemService {
 
     /**
      * 더비 상품 리스트 반환
+     *
      * @return
      */
     @Override
@@ -49,6 +51,7 @@ public class ItemServiceImpl implements ItemService {
 
     /**
      * 스니커즈 리스트 반환
+     *
      * @return
      */
     @Override
@@ -62,12 +65,22 @@ public class ItemServiceImpl implements ItemService {
 
     /**
      * 로퍼 리스트 반환
+     *
      * @return
      */
     @Override
     public List<Item> loaferList() {
         try {
             return itemDao.findByLoafer();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public Item itemDetail(int categoryNumber, int itemNumber) {
+        try {
+            return itemDao.itemDetail(categoryNumber, itemNumber);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -2,7 +2,8 @@
 <%@ page import="com.ezen.index.service.ItemService" %>
 <%@ page import="com.ezen.index.service.ItemServiceImpl" %>
 <%@ page import="com.ezen.index.dto.Item" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%--
     인덱스 페이지
 --%>
 

@@ -2,6 +2,7 @@ package com.ezen.index.dao;
 
 import com.ezen.index.dto.Category;
 import com.ezen.index.dto.Item;
+import com.ezen.index.dto.OrderList;
 import com.ezen.mall.domain.common.database.ConnectionFactory;
 
 import java.sql.Connection;
@@ -23,6 +24,7 @@ public class JdbcItemDao implements ItemDao {
 
     /**
      * DB에서 카테고리 관련 정보 가져오기
+     *
      * @return
      * @throws SQLException
      */
@@ -64,6 +66,7 @@ public class JdbcItemDao implements ItemDao {
 
     /**
      * DB에서 상품 목록 가져오기
+     *
      * @return
      * @throws SQLException
      */
@@ -108,6 +111,7 @@ public class JdbcItemDao implements ItemDao {
 
     /**
      * 더비 상품 리스트 가져오기
+     *
      * @return
      * @throws SQLException
      */
@@ -152,6 +156,7 @@ public class JdbcItemDao implements ItemDao {
     }
 
     /**
+<<<<<<< HEAD
      * 스니커즈 리스트 가져오기
      * @return
      * @throws SQLException
@@ -240,6 +245,52 @@ public class JdbcItemDao implements ItemDao {
 
         return list;
     }
+    /**
+     * 제품 상세보기
+     *
+     * @return
+     * @throws SQLException
+     */
+    public Item itemDetail(int categoryNumber, int itemNumber) throws SQLException {
+        StringBuilder sql = new StringBuilder();
+        Item item = new Item();
+        OrderList orderList = new OrderList();
+
+        sql.append(" SELECT it.cate_num, it.item_num, it.item_name, it.item_price, it.item_info, it.item_thumb, it.item_img, li.list_size")
+                .append(" FROM ITEM it")
+                .append(" FULL OUTER JOIN ORDER_LIST li")
+                .append(" ON it.item_num = li.item_num")
+                .append(" WHERE it.cate_num=? and it.item_num=?");
+
+        Connection conn = connectionFactory.getConnection();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            pstmt = conn.prepareStatement(sql.toString());
+            pstmt.setInt(1, categoryNumber);
+            pstmt.setInt(2, itemNumber);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                item.setItemCategory(rs.getString("cate_num"));
+                item.setItemNumber(rs.getInt("item_num"));
+                item.setItemName(rs.getString("item_name"));
+                item.setPrice(rs.getString("item_price"));
+                item.setItemInfo(rs.getString("item_info"));
+                item.setItemThumb(rs.getString("item_thumb"));
+                item.setItemImage(rs.getString("item_img"));
+                orderList.setListSize(rs.getInt("list_size"));
+            }
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return item;
+    }
 
     /*
      * 테스트를 위한 메인 메소드
@@ -254,5 +305,7 @@ public class JdbcItemDao implements ItemDao {
         System.out.println(itemDao.findBySneakers());  // DB 특정 카테고리 리스트 가져오기 (성공)
         System.out.println(itemDao.findByLoafer());  // DB 특정 카테고리 리스트 가져오기 (성공)
 
+
+//        System.out.println(itemDao.itemDetail(10, 4));
     }
 }

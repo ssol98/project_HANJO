@@ -40,5 +40,6 @@ public interface ItemService {
      */
     public List<Item> loaferList();
 
+    public Item itemDetail(int categoryNumber, int itemNumber);
 
 }
