@@ -2,7 +2,11 @@
 
 
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%
+
+%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -148,7 +152,7 @@
     <h3 id="payInfo">주문 정보</h3>
     <div class="payInfo-detail">
       <h4>주문번호 : </h4>
-      <h4>수취인 이름 : </h4>
+      <h4>수취인 이름 :  </h4>
       <h4>수취인 우편번호 : </h4>
       <h4>수취인 주소 + 상세주소 : </h4>
       <h4>수취인 휴대폰번호 : </h4>

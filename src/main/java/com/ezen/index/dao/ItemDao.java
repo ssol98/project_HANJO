@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface ItemDao {
 
-    public List<Item> load(int id) throws SQLException;
 
     public List<Category> findByCategoryAll() throws SQLException;
 

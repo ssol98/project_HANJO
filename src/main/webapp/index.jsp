@@ -91,18 +91,18 @@
 
         <main>
             <div class="item-wrapper">
-                <form class="item-option-bar">
-                    <div class="item-sort">
-                        <i class="fa-solid fa-server"></i>
-                        <span>이름</span>
-                        <span>낮은 가격순</span>
-                        <span>높은 가격순</span>
-                    </div>
-                    <div class="item-search">
-                        <input type="text" name="" id="" placeholder=" - 상품을 검색하세요" maxlength="15">
-                        <button type="submit" id=""><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-                </form>
+<%--                <form class="item-option-bar">--%>
+<%--                    <div class="item-sort">--%>
+<%--                        <i class="fa-solid fa-server"></i>--%>
+<%--                        <span>이름</span>--%>
+<%--                        <span>낮은 가격순</span>--%>
+<%--                        <span>높은 가격순</span>--%>
+<%--                    </div>--%>
+<%--                    <div class="item-search">--%>
+<%--                        <input type="text" name="" id="" placeholder=" - 상품을 검색하세요" maxlength="15">--%>
+<%--                        <button type="submit" id=""><i class="fa-solid fa-magnifying-glass"></i></button>--%>
+<%--                    </div>--%>
+<%--                </form>--%>
                 <ul>
                     <%--     li를 반복하면서 전체 상품 리스트를 출력  --%>
                     <c:forEach var="item" items="${list}" varStatus="loop">

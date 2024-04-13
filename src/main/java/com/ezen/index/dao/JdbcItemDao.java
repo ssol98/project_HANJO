@@ -16,12 +16,6 @@ public class JdbcItemDao implements ItemDao {
 
     private ConnectionFactory connectionFactory = ConnectionFactory.getInstance();
 
-    @Override
-    public List<Item> load(int id) throws SQLException {
-        return null;
-
-    }
-
     /**
      * DB에서 카테고리 관련 정보 가져오기
      *
