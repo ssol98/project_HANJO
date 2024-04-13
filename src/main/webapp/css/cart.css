@@ -45,12 +45,12 @@ th {
   color: #000;
 }
 
-/* 테이블 올렸을 때 */
-tbody tr:hover {
-  background-color: #d3d3d3;
-  opacity: 0.9;
-  cursor: pointer;
-}
+/*!* 테이블 올렸을 때 *!*/
+/*tbody tr:hover {*/
+/*  background-color: #d3d3d3;*/
+/*  opacity: 0.9;*/
+/*  cursor: pointer;*/
+/*}*/
 
 /* 테이블 비율 */
 /* th:nth-child(1),
