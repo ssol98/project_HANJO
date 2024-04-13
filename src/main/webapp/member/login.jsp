@@ -1,8 +1,13 @@
 <%-- 로그인 --%>
 
-
+<%@ page import="com.ezen.mall.web.common.encription.EzenUtil" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
 
+
+<%
+	String referer = request.getParameter("referer");
+
+%>
 <!doctype html>
 <html lang="ko">
 
@@ -46,12 +51,18 @@
 					<div class="position-relative">
 						<div>
 							<form class="needs-validation" action="/member/login-action.jsp" method="post">
-								<input type="hidden" name="referer" value="${referer}">
+								<input type="hidden" name="referer" id="referer" value="<%=referer%>">
+								<%
+									// 확인을 위함
+//									System.out.println("======밸류에 들어가는 referer값=======");
+//									System.out.println("referer:"+referer);
+//									System.out.println("===================================");
+								%>
 								<div class="input-icon-group mb-3">
 									<span class="input-icon">
 										<i class="bx bx-envelope"></i>
 									</span>
-									<input type="text" name="loginid" class="form-control" autofocus placeholder="ID" value="${EzenUtil.decryption(cookie.saveId.value)}">
+									<input type="text" name="loginid" class="form-control" autofocus placeholder="ID" value="${EzenUtil.decription(cookie.saveId.value)}">
 								</div>
 								<div class="input-icon-group mb-3">
 									<span class="input-icon">
@@ -61,7 +72,7 @@
 								</div>
 								<div class="mb-3 d-flex justify-content-between">
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" name="saveid"  id="flexCheckDefault" ${not empty cookie.saveId.value ? "chcked" : ""} >
+										<input class="form-check-input" type="checkbox" name="saveid"  id="flexCheckDefault" ${not empty cookie.saveId.value ? "checked" : ""} >
 										<label class="form-check-label" for="flexCheckDefault">
 											ID 저장
 										</label>
@@ -80,7 +91,7 @@
 
 							<!---->
 							<p class="pt-4 small text-body-secondary">
-								아직 회원이 아니신가요? <a href="#.html" class="ms-2 fw-semibold link-underline">회 원 가 입</a>
+								아직 회원이 아니신가요? <a href="../member/register.jsp" class="ms-2 fw-semibold link-underline">회 원 가 입</a>
 							</p>
 						</div>
 					</div>

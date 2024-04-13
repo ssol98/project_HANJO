@@ -70,7 +70,10 @@
         </div>
 
         <div id="button_flex">
-            <button id="payment_btn"><a href="../payment/paymentComplete.jsp">바로결제</a></button>
+            <c:if>
+
+            </c:if>
+            <button id="payment_btn"><a href="../payment/paymentComplete.jsp?itemNumber=${item.itemNumber}&itemCategory=${item.itemCategory}">바로결제</a></button>
             <form class="needs-validation" action="/cart/cart-action.jsp" method="post">
                 <input type="hidden" name="item" value="
                 <% if (item != null) { %>

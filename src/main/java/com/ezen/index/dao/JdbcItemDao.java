@@ -295,9 +295,9 @@ public class JdbcItemDao implements ItemDao {
 
 //        System.out.println(itemDao.findByCategoryAll());  // DB 카테고리 가져오기 (성공)
 //        System.out.println(itemDao.findByAll());  // DB 전체 상품리스트 가져오기 (성공)
-        System.out.println(itemDao.findByDerby());  // DB 특정 카테고리 리스트 가져오기 (성공)
-        System.out.println(itemDao.findBySneakers());  // DB 특정 카테고리 리스트 가져오기 (성공)
-        System.out.println(itemDao.findByLoafer());  // DB 특정 카테고리 리스트 가져오기 (성공)
+//        System.out.println(itemDao.findByDerby());  // DB 특정 카테고리 리스트 가져오기 (성공)
+//        System.out.println(itemDao.findBySneakers());  // DB 특정 카테고리 리스트 가져오기 (성공)
+//        System.out.println(itemDao.findByLoafer());  // DB 특정 카테고리 리스트 가져오기 (성공)
 
 
 //        System.out.println(itemDao.itemDetail(10, 4));

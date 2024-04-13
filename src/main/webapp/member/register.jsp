@@ -89,14 +89,30 @@
                                              <span class="input-icon">
                                                  <i class="bx bx-lock-open"></i>
                                              </span>
-                                        <input type="text" class="form-control" required id="phone" name="phone" placeholder="PHONE NUMBER">
+                                        <input type="text" class="form-control" required id="phoneNum" name="phoneNum" placeholder="PHONE-NUMBER">
+
+
                                     </div>
 
                                     <div class="input-icon-group mb-3">
                                              <span class="input-icon">
                                                  <i class="bx bx-lock-open"></i>
                                              </span>
-                                        <input type="text" class="form-control" required id="address" name="address" placeholder="ADDRESS">
+                                        <input type="text" class="form-control" required id="defaultAddress" name="defaultAddress" placeholder="DEFAULT-ADDRESS">
+                                    </div>
+
+                                    <div class="input-icon-group mb-3">
+                                             <span class="input-icon">
+                                                 <i class="bx bx-lock-open"></i>
+                                             </span>
+                                        <input type="text" class="form-control" required id="detailAddress" name="detailAddress" placeholder="DETAIL-ADDRESS">
+                                    </div>
+
+                                    <div class="input-icon-group mb-3">
+                                             <span class="input-icon">
+                                                 <i class="bx bx-lock-open"></i>
+                                             </span>
+                                        <input type="text" class="form-control" required id="postNum" name="postNum" placeholder="POST-NUM">
                                     </div>
 
                                     <div class="d-grid">

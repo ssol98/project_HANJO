@@ -53,11 +53,10 @@
                 <div class="row align-items-start">
                     <div style="margin: auto auto" class="col">
                         <br>
-                        *이미지*<br>
                         <br>
-                        안녕하세요 **님 <br>
+                        안녕하세요 ${loginMember.name}님 <br>
                         <br>
-                        고객님의 회원등급은 <strong>다이아몬드</strong>입니다.
+                        고객님의 회원등급은 <strong style="color: #7abaff">다이아몬드</strong>입니다.
                     </div>
                 </div>
             </div>
@@ -67,58 +66,59 @@
 
                 <tr>
                     <th scope="row">아이디</th>
-                    <td>아이디 블라블라</td>
-                </tr>
-
-                <tr>
-                    <th scope="row">비밀번호</th>
-                    <td>비밀번호 블라블라</td>
-                </tr>
-
-                <tr>
-                    <th scope="row">비밀번호 확인</th>
-                    <td>확인 블라블라</td>
+                    <td>${loginMember.id}</td>
                 </tr>
 
                 <tr>
                     <th scope="row">이름</th>
-                    <td>이름 블라블라</td>
+                    <td>${loginMember.name}</td>
                 </tr>
 
                 <tr>
                     <th scope="row">주소</th>
-                    <td>주소 블라블라</td>
+                    <td>${loginMember.defaultAddress}</td>
+                </tr>
+
+                <tr>
+                    <th scope="row">상세주소</th>
+                    <td>${loginMember.detailAddress}  우) ${loginMember.postNum}</td>
                 </tr>
 
                 <tr>
                     <th scope="row">전화번호</th>
-                    <td>전화번호 블라블라</td>
+                    <td>${loginMember.phoneNum}</td>
                 </tr>
 
                 <tr>
                     <th scope="row">이메일</th>
-                    <td>이메일메일메일</td>
+                    <td>${loginMember.email}</td>
                 </tr>
 
                 <tr>
-                    <th scope="row">문자 수신 여부</th>
-                    <td>
-                        <input type="radio" id="m-yes" name="mailSubscription" value="yes">
-                        <label for="m-yes">예</label>
-                        <input type="radio" id="m-no" name="mailSubscription" value="no">
-                        <label for="m-no">아니오</label>
-                    </td>
+                    <th scope="row">가입일시</th>
+                    <td>${loginMember.regdate}</td>
                 </tr>
 
-                <tr>
-                    <th scope="row">메일 수신 여부</th>
-                    <td>
-                        <input type="radio" id="e-yes" name="mailSubscription" value="yes">
-                        <label for="e-yes">예</label>
-                        <input type="radio" id="e-no" name="mailSubscription" value="no">
-                        <label for="e-no">아니오</label>
-                    </td>
-                </tr>
+
+<%--                <tr>--%>
+<%--                    <th scope="row">문자 수신 여부</th>--%>
+<%--                    <td>--%>
+<%--                        <input type="radio" id="m-yes" name="mailSubscription" value="yes">--%>
+<%--                        <label for="m-yes">예</label>--%>
+<%--                        <input type="radio" id="m-no" name="mailSubscription" value="no">--%>
+<%--                        <label for="m-no">아니오</label>--%>
+<%--                    </td>--%>
+<%--                </tr>--%>
+
+<%--                <tr>--%>
+<%--                    <th scope="row">메일 수신 여부</th>--%>
+<%--                    <td>--%>
+<%--                        <input type="radio" id="e-yes" name="mailSubscription" value="yes">--%>
+<%--                        <label for="e-yes">예</label>--%>
+<%--                        <input type="radio" id="e-no" name="mailSubscription" value="no">--%>
+<%--                        <label for="e-no">아니오</label>--%>
+<%--                    </td>--%>
+<%--                </tr>--%>
 
             </table>
 

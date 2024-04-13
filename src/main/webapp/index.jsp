@@ -66,8 +66,7 @@
                         <li>
                             <div class="image-wrap"></div>
                             <div class="desc">
-                                <strong>신상품</strong>
-
+                                <a href="/item_detail/item_detail.jsp?itemNumber=9&categoryNumber=20"><strong>신상품 보러가기</strong></a>
                             </div>
                         </li>
                         <li>
@@ -80,8 +79,7 @@
                         <li>
                             <div class="image-wrap"></div>
                             <div class="desc">
-                                <strong>신 상 품</strong>
-
+                                <a href="/item_detail/item_detail.jsp?itemNumber=9&categoryNumber=20"><strong>신상품 보러가기</strong></a>
                             </div>
                         </li>
                     </ul>
