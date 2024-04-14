@@ -97,7 +97,7 @@
         .payInfo-detail-left{
             float: left;
             text-align: left;
-            padding-left: 20px;
+            padding-left: 60px;
 
         }
         .payInfo-detail-left h4{

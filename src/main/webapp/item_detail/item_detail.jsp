@@ -44,7 +44,7 @@
 
         <div class="item-img-info">
             <div id="img_div" style="background-image:url(..${item.itemThumb}); width: 300px; height: 300px;"></div>
-
+            <form>
             <div class="item-detail-info">
                 <div class="item-detail-info-div"><strong>${item.itemName}</strong></div>
                 <div class="item-detail-info-div">${item.price}</div>
@@ -67,7 +67,9 @@
                     <option value="300">300</option>
                 </select>
             </div>
+            </form>
         </div>
+
 
         <div id="button_flex">
             <c:if>
