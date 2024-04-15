@@ -6,6 +6,7 @@
 <%@ page import="com.ezen.mall.web.common.page.PageParams" %>
 <%@ page import="com.ezen.board.dao.JdbcArticleDao" %>
 <%@ page import="com.ezen.mall.web.common.encription.EzenUtil" %>
+<%@ page import="com.ezen.member.dto.Member" %>
 <%--
     일상 게시판
  --%>
@@ -26,6 +27,8 @@
     }
 
     int pageSize = 10;
+
+
 
     Cookie[] cookie = request.getCookies();
     String userId = new String();
@@ -52,13 +55,16 @@
     String writeTitle = request.getParameter("writeTitle");
     String writeContent = request.getParameter("writeContent");
 
+
     Article ac = new Article();
     JdbcArticleDao jdao = new JdbcArticleDao();
+    Member loginMember = (Member) session.getAttribute("loginMember");
+
     if (request.getParameter("writeTitle") != null) {
         ac.setArticleTitle(writeTitle);
         ac.setArticleContent(writeContent);
         ac.setHitcount(0);
-        ac.setUserId(userId);
+        ac.setUserId(loginMember.getId());
         ac.setBoardNum(boardNum);
         jdao.createArticle(ac);
     }

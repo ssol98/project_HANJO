@@ -99,7 +99,7 @@
                 </div>
                 <div class="user-id">
                     <div class="user-id_text" readonly>
-                        <h4><%=userId%></h4>
+                        <h4>${loginMember.id}</h4>
                     </div>
                 </div>
                 <div class="content">
@@ -120,11 +120,11 @@
 <%-- footer end --%>
 <script>
     let writeBtn = document.querySelector('.write-btn');
-    console.log(writeBtn)
     writeBtn.addEventListener('click', function () {
-        let writeTitle = document.querySelector('.write-title');
-        let writeContent = document.querySelector('.write-content');
-        window.location.href = "board.jsp?writeTitle=" + writeTitle.value + "&writeContent=" + writeContent.value;
+        let writeTitle = document.querySelector('.write-title').value;
+        let writeContent = document.querySelector('.write-content').value;
+        //console.log(writeTitle, writeContent)
+        window.location.href = "board.jsp?userid=${loginMember.id}&writeTitle="+ writeTitle + "&writeContent=" + writeContent;
     })
 </script>
 </body>

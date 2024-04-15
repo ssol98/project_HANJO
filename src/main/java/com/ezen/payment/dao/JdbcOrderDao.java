@@ -21,6 +21,7 @@ public class JdbcOrderDao implements OrderDao {
 
         JdbcMemberDao jdbcMemberDao = new JdbcMemberDao();
         Member member = jdbcMemberDao.findById(userId); // userId에 관한 정보 값들 가져오기
+
         String realPrice = price.replaceAll(",","");
 
         StringBuilder sql = new StringBuilder();

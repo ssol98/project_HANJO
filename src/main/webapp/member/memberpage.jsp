@@ -70,7 +70,8 @@
 
     #orders-table{
         margin: 60px auto ;
-        width: 1400px;
+        width: 900px;
+        border: 1px solid #48372f;
 
 
     }
@@ -87,7 +88,7 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <%--nav start--%>
-
+            <jsp:include page="/module/nav.jsp"/>
         <%--nav end--%>
 
         <%--Contents start--%>

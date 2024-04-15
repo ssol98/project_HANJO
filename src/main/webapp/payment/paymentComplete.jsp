@@ -209,7 +209,7 @@
 <!-- 하단 버튼 플렉스 박스 -->
 <div id="rowFlex">
     <button id="homeBtn"><a href="/">홈으로</a></button>
-<%--    <button id="mypageBtn"><a href="../member/memberpage.jsp">마이페이지</a></button>--%>
+    <button id="mypageBtn"><a href="../member/memberpage.jsp?userId=${loginMember.id}">마이페이지</a></button>
 </div>
 </body>
 

@@ -7,6 +7,7 @@
 
 <div class="head-info">
     <a href="/"><img src="../img/logo.png" style="width:300px; height:40px; margin-right: 290px"></a>
+
     <c:choose>
         <c:when test="${empty loginMember}">
             <h2><a href="../member/login.jsp?referer=<%=request.getRequestURI()%>">로그인</a></h2>
@@ -17,6 +18,7 @@
             <h2><a href="../member/logout-action.jsp">로그아웃</a></h2>
         </c:otherwise>
     </c:choose>
+
     <%--    <h2><a href="../member/login.jsp?referer=<%=request.getRequestURI()%>">로그인</a></h2>--%>
     <%--    <h2><a href="/member/register.jsp">회원가입</a></h2>--%>
     <%--    <h2><a href="../member/memberpage.jsp"><i class="fa-solid fa-user"></i></a></h2>--%>
@@ -25,5 +27,4 @@
     <h2><a href="../board/qna.jsp">Q & A</a></h2>
 </div>
 <header>
-
 </header>

@@ -61,6 +61,13 @@
 
     <div class="">
         <h2 id="top_text">장바구니 목록</h2>
+        <div class="cart_info" style="margin-bottom: 30px">
+            <ul>
+                <li>장바구니 상품은 최대 30일간 저장됩니다.</li>
+                <li>가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
+                <li>오늘출발 상품은 판매자 설정 시점에 따라 오늘출발 여부가 변경될 수 있으니 주문 시 꼭 다시 확인해 주시기 바랍니다.</li>
+            </ul>
+        </div>
         <table>
             <thead>
             <tr>

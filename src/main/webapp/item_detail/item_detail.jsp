@@ -70,7 +70,12 @@
                 </div>
             </form>
         </div>
-
+        <div class="item_info" style="margin-top: 60px">
+            <ul>
+                <li>한조의 수제화는 자체공장에서 가공된 최고급 소재를 사용하며, 평균 제작기간은 약 12~14일이 소요됩니다.</li>
+                <li>주문 후 생산되는 제품임으로 교환, 반품이 불가합니다.</li>
+            </ul>
+        </div>
 
         <div id="button_flex">
             <c:if>

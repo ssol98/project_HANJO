@@ -21,6 +21,7 @@
  #my-table{
      margin: 60px auto ;
      width: 900px;
+     border: 1px solid #48372f;
  }
  th {
      background-color: #48372f;
