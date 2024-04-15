@@ -2,12 +2,16 @@
 
 <%@ page import="com.ezen.mall.web.common.encription.EzenUtil" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
-	String referer = request.getParameter("referer");
-
+	String referer = (String)request.getAttribute("referer");
+	String message = (String)request.getAttribute("message");
+	if(referer == null){
+		referer = "/";
+	}
 %>
+
 <!doctype html>
 <html lang="ko">
 
@@ -52,6 +56,7 @@
 						<div>
 							<form class="needs-validation" action="/member/login-action.jsp" method="post">
 								<input type="hidden" name="referer" id="referer" value="<%=referer%>">
+								<input type="hidden" name="message" id="referer" value="<%=message%>">
 								<%
 									// 확인을 위함
 //									System.out.println("======밸류에 들어가는 referer값=======");

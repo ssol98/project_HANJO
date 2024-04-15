@@ -11,7 +11,16 @@ a {
 #top_text {
   width: 50%;
   margin: 60px auto;
-  text-align: left;
+  text-align: center;
+}
+/* 제품 설명 밑줄 효과 */
+
+#top_text::after {
+  content: "";
+  display: block;
+  width: 50%;
+  border-bottom: 1px solid black;
+  margin-left: 25%;
 }
 
 table {

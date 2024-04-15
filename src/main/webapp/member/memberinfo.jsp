@@ -63,7 +63,6 @@
 
             <table id="my-table" class="table">
 
-
                 <tr>
                     <th scope="row">아이디</th>
                     <td>${loginMember.id}</td>

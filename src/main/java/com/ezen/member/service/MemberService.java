@@ -3,8 +3,10 @@ package com.ezen.member.service;
 import com.ezen.member.dao.JdbcMemberDao;
 import com.ezen.member.dao.MemberDao;
 import com.ezen.member.dto.Member;
+import com.ezen.member.dto.Order;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * 회원 관련한 비즈니스 메소드 정의
@@ -37,24 +39,27 @@ public class MemberService {
         Member loginMember = null;
         boolean isMember = memberDao.findByIdNPasswd(id, passwd);
         if(isMember){
-           loginMember = memberDao.findById(id);
+            loginMember = memberDao.findById(id);
             System.out.println(loginMember);
         }
         return  loginMember;
     }
 
-//    public List<Member> orderList(String id){
-//        try {
-//            return memberDao.orderList(id);
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
+    /**
+     * 사용자의 주문 정보를 불러오기 위함
+     * 4/13 추가된 getOrderListForMember 메소드
+     * @param id
+     * @return
+     */
+    public List<Order> getOrderListForMember(String id) {
+        try{
+            return memberDao.orderList(id);
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
 
 
-//    public Member orderList(String id) throws SQLException{
-//
-//    }
     // 기타 등등
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {

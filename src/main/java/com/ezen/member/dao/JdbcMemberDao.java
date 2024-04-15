@@ -1,15 +1,18 @@
 package com.ezen.member.dao;
 
 import com.ezen.mall.domain.common.database.ConnectionFactory;
-import com.ezen.member.dto.Member;
-import com.ezen.member.dto.Order;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import com.ezen.member.dto.Member;
+import com.ezen.member.dto.Order;
 
 /**
  * 회원 관련 관계형 Database 전담 처리 클래스
@@ -99,7 +102,7 @@ public class JdbcMemberDao implements MemberDao {
         }
         return member;
     }
-
+    
     ////-----------------------------------------
 
     // 회원아이디와 비밀번호 전달받아 인증 결과 반환
@@ -118,6 +121,7 @@ public class JdbcMemberDao implements MemberDao {
             pstmt.setString(2, passwd);
             rs = pstmt.executeQuery();
             isMember = rs.next();
+
         } finally {
             try {
                 if (rs != null) rs.close();
@@ -171,10 +175,16 @@ public class JdbcMemberDao implements MemberDao {
 
     }
 
+    /**
+     * 사용자의 주문정보를 중복된 주문번호일 시 같은 맵으로 묶어 객체에 저장하기 위한 쿼리문
+     * @param id
+     * @return
+     * @throws SQLException
+     */
     @Override
-    public Member orderList(String id) throws SQLException {
-        Member member = new Member();
-        List<Order> orders = new ArrayList<>();
+    public List<Order> orderList(String id) throws SQLException {
+
+        Map<Integer, Order> orderMap = new HashMap<>(); // 주문 번호를 키로 하여 Order 객체를 저장
 
         StringBuilder sql = new StringBuilder();
         sql.append(" SELECT orders.user_id AS order_id, orders.order_date, orders.order_num, orders.total_price, item.item_name")
@@ -183,59 +193,100 @@ public class JdbcMemberDao implements MemberDao {
                 .append(" JOIN item ON order_list.item_num = item.item_num")
                 .append(" WHERE orders.user_id = ?");
 
-        Connection con = connectionFactory.getConnection();
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
-
-        try {
-            pstmt = con.prepareStatement(sql.toString());
+        try (Connection con = connectionFactory.getConnection();
+             PreparedStatement pstmt = con.prepareStatement(sql.toString())) {
             pstmt.setString(1, id);
-            rs = pstmt.executeQuery();
-
-            if (rs.next()) {
-                member.setId(rs.getString("user_id"));
-                do { // 루프문으로 멤버객체에 속한 order 배열로 저장
-                    Order order = new Order();
-                    order.setOrderId(rs.getString("order_id"));
-                    order.setOrderDate(rs.getString("order_date"));
-                    order.setOrderNum(rs.getInt("order_num"));
-                    order.setTotalPrice(rs.getString("total_price"));
-                    order.setItemName(rs.getString("item_name"));
-                    orders.add(order); // 배열에 추가
-                } while (rs.next());
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    int orderNum = rs.getInt("order_num");
+                    Order order = orderMap.getOrDefault(orderNum, null); //orderNum의 값이나 default값을 가져와
+                    if (order == null) {
+                        order = new Order(); // 새로운 주문 번호인 경우에 새롭게 추가되는 객체생성 (초기화)
+                        order.setOrderId(rs.getString("order_id"));
+                        order.setOrderDate(rs.getString("order_date"));
+                        order.setOrderNum(orderNum);
+                        order.setTotalPrice(rs.getString("total_price"));
+                        orderMap.put(orderNum, order);
+                    }
+                    order.addItemName(rs.getString("item_name")); // 상품 이름 추가
+                }
             }
-            member.setOrders(orders); // Member 객체에 order 배열 추가
-        } finally {
-            try {
-                if (rs != null) rs.close();
-                if (pstmt != null) pstmt.close();
-                if (con != null) con.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
-        return member;
+
+        return new ArrayList<>(orderMap.values()); // Map의 값을 리스트로 변환하여 반환
+
+        /**
+         * 밑의 로직은 모든 항목을 리스트로 뽑아 낼때 사용할 수 있습니다 (나중에 사용할 가능성때문에 주석)
+         * ex) 주문번호- 24의 브라운 스니커즈 주문총가격 (항목으로 사용할거면 아이템 가격으로 변경) 주문일시
+         *     주문번호- 24의 베이지 스니커드 주문총가격 (,,) 주문일시
+         */
+//        List<Order> orders = new ArrayList<>();
+//
+//        StringBuilder sql = new StringBuilder();
+//        sql.append(" SELECT orders.user_id AS order_id, orders.order_date, orders.order_num, orders.total_price, item.item_name")
+//                .append(" FROM orders")
+//                .append(" JOIN order_list ON orders.order_num = order_list.order_num")
+//                .append(" JOIN item ON order_list.item_num = item.item_num")
+//                .append(" WHERE orders.user_id = ?");
+//
+//        Connection con = null;
+//        PreparedStatement pstmt = null;
+//        ResultSet rs = null;
+//
+//        try {
+//            con = connectionFactory.getConnection();
+//            pstmt = con.prepareStatement(sql.toString());
+//            pstmt.setString(1, id);
+//            rs = pstmt.executeQuery();
+//
+//
+//            while (rs.next()) {
+//                Order order = new Order();
+//                order.setOrderId(rs.getString("order_id"));
+//                order.setOrderDate(rs.getString("order_date"));
+//                order.setOrderNum(rs.getInt("order_num"));
+//                order.setTotalPrice(rs.getString("total_price"));
+//                order.setItemName(rs.getString("item_name"));
+//                orders.add(order); // 배열에 추가
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        } finally {
+//            try {
+//                if (rs != null) rs.close();
+//                if (pstmt != null) pstmt.close();
+//                if (con != null) con.close();
+//            } catch (SQLException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }
+//        return orders;
     }
 
+    /**
+     * 테스트출력을 위한 메인
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
-        MemberDao memberDao = new JdbcMemberDao();
-//        Member member = new Member("monday", "1111", "월요일", "monday@gmail.com","01022571892","서울시중랑구상봉동","블라블라","02122","20240506");
-//        memberDao.create(member);
-//        System.out.println("회원가입 완료...");
-//
-//
-//        member = memberDao.findById("bangry");
-//        //System.out.println(member);
-//        boolean isMember = memberDao.findByIdNPasswd("hanzo1", "1111");
-//        System.out.println(isMember);
-//
-//        List<Member> list = memberDao.findByAll();
-//        for (Member members : list) {
-//            System.out.println(members);
-//        }
 
-        Member hanzo = memberDao.orderList("hanzo1");
-        System.out.println(hanzo);
+        MemberDao memberDao = new JdbcMemberDao();
+        String userId = "hanzo1"; // 조회하고자 하는 사용자 ID 입력
+
+        try {
+            List<Order> orders = memberDao.orderList(userId);
+            for (Order order : orders) {
+//                System.out.println("주문 번호: " + order.getOrderNum());
+//                System.out.println("주문 날짜: " + order.getOrderDate());
+//                System.out.println("총 가격: " + order.getTotalPrice());
+//                System.out.println("주문 상품: " + String.join(", ", order.getItemNames()));
+//                System.out.println("------------------------------");
+            }
+        } catch (SQLException e) {
+            System.err.println("데이터베이스 조회 중 에러 발생: " + e.getMessage());
+        }
     }
 
 

@@ -1,7 +1,5 @@
 package com.ezen.member.dto;
 
-//import com.ezen.payment.dto.Order;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +27,7 @@ public class Member {
         this.email = email;
         this.phoneNum = phoneNum;
     }
+
 
     public Member(String id, String passwd, String name, String email, String phoneNum, String defaultAddress, String detailAddress, String postNum, String regdate) {
         this.id = id;

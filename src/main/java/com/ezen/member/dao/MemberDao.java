@@ -1,6 +1,7 @@
 package com.ezen.member.dao;
 
 import com.ezen.member.dto.Member;
+import com.ezen.member.dto.Order;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -18,7 +19,7 @@ public interface MemberDao {
 
     public List<Member> findByAll() throws SQLException;
 
-    public Member orderList(String id)throws SQLException;
+    public List<Order> orderList(String id)throws SQLException;
 
 
 }

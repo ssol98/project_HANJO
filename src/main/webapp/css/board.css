@@ -33,10 +33,6 @@ section.notice {
     margin-bottom: 10px;
 }
 
-.page-title {
-    margin-bottom: 60px;
-}
-
 .page-title h1 {
     font-size: 30px;
     font-weight: bold;
@@ -91,14 +87,13 @@ section.notice {
     background-color: #f9f7f9;
     display: flex;
     justify-content: flex-end;
-    padding-right: 10px;
-
 }
 
 #board-search .search-window .search-wrap {
     display: flex;
     position: relative;
     width: 100%;
+    height: 40px;
     max-width: 362px;
     align-items: center;
 }
@@ -106,9 +101,9 @@ section.notice {
 #board-search .search-window .search-wrap input {
     height: 40px;
     font-size: 14px;
-    padding: 7px 14px;
+    padding: 5px 14px;
     border: 1px solid #ccc;
-    width: 190px;
+    width: 210px;
     margin-left: 10px;
 }
 
@@ -126,6 +121,16 @@ section.notice {
     width: 78px;
     padding: 0;
     font-size: 15px;
+}
+
+.search-window .search-wrap .search-type {
+    width: 65px;
+    height: 40px;
+}
+
+.search-window .search-wrap .search-btn {
+    width: 70px;
+    height: 40px;
 }
 
 .board-table {
@@ -189,7 +194,7 @@ section.notice {
 }
 
 #board-write .search-window .search-wrap .btn {
-    width: 78px;
+    width: 70px;
     height: 40px;
     padding: 0;
     font-size: 15px;

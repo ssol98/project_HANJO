@@ -1,18 +1,25 @@
 <%@ page import="com.ezen.index.service.ItemServiceImpl" %>
 <%@ page import="com.ezen.index.dto.Item" %>
-<%@ page import="com.ezen.index.service.ItemService" %><%-- 결제 완료 창 --%>
+<%@ page import="com.ezen.index.service.ItemService" %>
+<%@ page import="com.ezen.payment.service.OrderServiceImpl" %>
+<%@ page import="com.ezen.payment.service.OrderService" %><%-- 결제 완료 창 --%>
 
 
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
+    String userId = request.getParameter("userId");
+    String itemPrice = request.getParameter("itemPrice");
     int categoryNumber = Integer.parseInt(request.getParameter("itemCategory"));
     int itemNumber = Integer.parseInt(request.getParameter("itemNumber"));
 
     ItemService itemService = new ItemServiceImpl();
     Item item = itemService.itemDetail(categoryNumber, itemNumber);
     request.setAttribute("item", item);
+
+    OrderService orderService = new OrderServiceImpl();
+    orderService.createOrder(userId, itemPrice);
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -201,9 +208,12 @@
 
 <!-- 하단 버튼 플렉스 박스 -->
 <div id="rowFlex">
-    <button id="homeBtn"><a href="/">홈</a></button>
-    <button id="mypageBtn"><a href="../member/memberpage.jsp">마이페이지</a></button>
+    <button id="homeBtn"><a href="/">홈으로</a></button>
+<%--    <button id="mypageBtn"><a href="../member/memberpage.jsp">마이페이지</a></button>--%>
 </div>
 </body>
 
 </html>
+
+
+

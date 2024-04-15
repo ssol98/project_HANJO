@@ -1,13 +1,27 @@
 package com.ezen.member.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order {
     private String orderId;
     private String orderDate;
     private int orderNum;
     private String totalPrice;
     private String itemName;
-
+    private List<String> itemNames = new ArrayList<>();
     public Order() {}
+
+    public List<String> getItemNames() {
+        return itemNames;
+    }
+
+    public void setItemNames(List<String> itemNames) {
+        this.itemNames = itemNames;
+    }
+    public void addItemName(String itemName) {
+        this.itemNames.add(itemName);
+    }
 
     public String getOrderId() {
         return orderId;

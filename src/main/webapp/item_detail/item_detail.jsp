@@ -43,30 +43,31 @@
     <div class="item-detail-wrapper">
 
         <div class="item-img-info">
-            <div id="img_div" style="background-image:url(..${item.itemThumb}); width: 300px; height: 300px;"></div>
             <form>
-            <div class="item-detail-info">
-                <div class="item-detail-info-div"><strong>${item.itemName}</strong></div>
-                <div class="item-detail-info-div">${item.price}</div>
-                <div class="item-detail-info-div">${item.itemInfo}</div>
+                <div id="img_div" style="background-image:url(..${item.itemThumb}); width: 300px; height: 300px;"></div>
 
-                <span>사이즈 선택 : </span>
-                <select name="size" style="margin-top: 20px">
-                    <option value="240">240</option>
-                    <option value="245">245</option>
-                    <option value="250">250</option>
-                    <option value="255">255</option>
-                    <option value="260">260</option>
-                    <option value="265">265</option>
-                    <option value="270">270</option>
-                    <option value="275">275</option>
-                    <option value="280">280</option>
-                    <option value="285">285</option>
-                    <option value="290">290</option>
-                    <option value="295">295</option>
-                    <option value="300">300</option>
-                </select>
-            </div>
+                <div class="item-detail-info">
+                    <div class="item-detail-info-div"><strong>${item.itemName}</strong></div>
+                    <div class="item-detail-info-div">${item.price}</div>
+                    <div class="item-detail-info-div">${item.itemInfo}</div>
+
+                    <span>사이즈 선택 : </span>
+                    <select name="size" style="margin-top: 20px">
+                        <option value="240">240</option>
+                        <option value="245">245</option>
+                        <option value="250">250</option>
+                        <option value="255">255</option>
+                        <option value="260">260</option>
+                        <option value="265">265</option>
+                        <option value="270">270</option>
+                        <option value="275">275</option>
+                        <option value="280">280</option>
+                        <option value="285">285</option>
+                        <option value="290">290</option>
+                        <option value="295">295</option>
+                        <option value="300">300</option>
+                    </select>
+                </div>
             </form>
         </div>
 
@@ -75,7 +76,9 @@
             <c:if>
 
             </c:if>
-            <button id="payment_btn"><a href="../payment/paymentComplete.jsp?itemNumber=${item.itemNumber}&itemCategory=${item.itemCategory}">바로결제</a></button>
+            <button id="payment_btn"><a
+                    href="../payment/paymentComplete.jsp?itemNumber=${item.itemNumber}&itemCategory=${item.itemCategory}&itemPrice=${item.price}&userId=${loginMember.id}">바로결제</a>
+            </button>
             <form class="needs-validation" action="/cart/cart-action.jsp" method="post">
                 <input type="hidden" name="item" value="
                 <% if (item != null) { %>
@@ -99,6 +102,18 @@
     <%-- footer start --%>
     <jsp:include page="/module/footer.jsp"/>
     <%--    <%—- footer end -—%>--%>
+<%--    <script>--%>
+
+<%--        // alert(document.productForm.count.value);--%>
+<%--        document.productForm.addEventListener("submit", event => {--%>
+<%--            event.preventDefault();--%>
+<%--            let pid = document.productForm.pid.value;--%>
+<%--            let price = document.productForm.price.value;--%>
+<%--            let count = document.productForm.count.value;--%>
+<%--            event.target.submit();--%>
+
+<%--        });--%>
+<%--    </script>--%>
 </div>
 </body>
 

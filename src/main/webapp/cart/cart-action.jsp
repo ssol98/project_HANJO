@@ -15,7 +15,25 @@
     session.setAttribute("cartItems", cartItems);
 %>
 
+<%
+    String action = request.getParameter("action");
+    ArrayList<String> cartItemRemove = (ArrayList<String>) session.getAttribute("cartItems");
+
+    if (action != null && cartItemRemove != null) {
+        if (action.equals("removeSelected")) {
+            String[] selectedItems = request.getParameterValues("selectedItems");
+            if (selectedItems != null) {
+                for (String selectedItem : selectedItems) {
+                    cartItemRemove.remove(selectedItem);
+                }
+                session.setAttribute("cartItemRemove", cartItemRemove);
+            }
+        } else if (action.equals("removeAll")) {
+            session.removeAttribute("cartItemRemove");
+        }
+    }
+%>
 <script>
-    alert("장바구니에 상품이 추가되었습니다.");
+    alert("장바구니를 업데이트했습니다.");
     history.back();
 </script>

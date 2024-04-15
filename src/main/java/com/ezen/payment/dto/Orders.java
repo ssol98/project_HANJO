@@ -1,6 +1,6 @@
 package com.ezen.payment.dto;
 
-public class Order {
+public class Orders {
 
     private int orderNumber;
     private String receiverName;
@@ -13,9 +13,18 @@ public class Order {
     private int totalPrice;
     private String userId;
 
-    public Order() {}
+    public int getTotalPrice() {
+        return totalPrice;
+    }
 
-    public Order(int orderNumber, String receiverName, String receiverPNumber, String receiverAddress, String receiverDetailAddress, String receiverHp, String deliveryMemo, String regdate, int totalPrice, String userId) {
+    public void setTotalPrice(int totalPrice)
+    {
+        this.totalPrice = totalPrice;
+    }
+
+    public Orders() {}
+
+    public Orders(int orderNumber, String receiverName, String receiverPNumber, String receiverAddress, String receiverDetailAddress, String receiverHp, String deliveryMemo, String regdate, String userId) {
         this.orderNumber = orderNumber;
         this.receiverName = receiverName;
         this.receiverPNumber = receiverPNumber;
@@ -24,7 +33,6 @@ public class Order {
         this.receiverHp = receiverHp;
         this.deliveryMemo = deliveryMemo;
         this.regdate = regdate;
-        this.totalPrice = totalPrice;
         this.userId = userId;
     }
 
@@ -92,13 +100,6 @@ public class Order {
         this.regdate = regdate;
     }
 
-    public int getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(int totalPrice) {
-        this.totalPrice = totalPrice;
-    }
 
     public String getUserId() {
         return userId;
@@ -110,7 +111,7 @@ public class Order {
 
     @Override
     public String toString() {
-        return "OrderDto{" +
+        return "Order{" +
                 "orderNumber=" + orderNumber +
                 ", receiverName='" + receiverName + '\'' +
                 ", receiverPNumber='" + receiverPNumber + '\'' +

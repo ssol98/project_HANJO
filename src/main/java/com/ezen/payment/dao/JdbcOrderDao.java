@@ -1,8 +1,9 @@
 package com.ezen.payment.dao;
 
-import com.ezen.board.dto.Board;
 import com.ezen.mall.domain.common.database.ConnectionFactory;
-import com.ezen.payment.dto.Order;
+import com.ezen.member.dao.JdbcMemberDao;
+import com.ezen.member.dto.Member;
+import com.ezen.payment.dto.Orders;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,79 +12,89 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JdbcOrderDao implements OrderDao{
+public class JdbcOrderDao implements OrderDao {
 
     private ConnectionFactory connectionFactory = ConnectionFactory.getInstance();
 
     @Override
-    public void createOrder(Order order, String userId) throws SQLException {
-//        List<Board> list = new ArrayList<>();
-//
-//        StringBuilder sql = new StringBuilder();
-//        sql.append(" SELECT board_id, category, title, description")
-//                .append(" FROM board")
-//                .append(" ORDER BY board_id");
-//
-//        Connection conn = connectionFactory.getConnection();
-//        PreparedStatement pstmt = null;
-//        ResultSet rs = null;
-//        try {
-//            pstmt = conn.prepareStatement(sql.toString());
-//            rs = pstmt.executeQuery();
-//            while (rs.next()) {
-//                board.setBoardId(rs.getInt("board_id"));
-//                board.setCategory(rs.getInt("category"));
-//                board.setTitle(rs.getString("title"));
-//                board.setDescription(rs.getString("description"));
-//                list.add(board);
-//            }
-//        } finally {
-//            try {
-//                if (rs != null) rs.close();
-//                if (pstmt != null) pstmt.close();
-//                if (conn != null) conn.close();
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+    public void createOrder(String userId, String price) throws SQLException {
 
+        JdbcMemberDao jdbcMemberDao = new JdbcMemberDao();
+        Member member = jdbcMemberDao.findById(userId); // userId에 관한 정보 값들 가져오기
+        String realPrice = price.replaceAll(",","");
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//        sql.append(" INSERT INTO ORDERS(ORDER_NUM, board_id, writer, title, content, passwd, group_no, level_no, order_no)")
-//                .append(" VALUES(order_num_seq.NEXTVAL, )");
-//        Connection conn = connectionFactory.getConnection();
-//        PreparedStatement pstmt = null;
-//
-//        try {
-////            conn.setAutoCommit(true); // 기본값: true
-//            pstmt = conn.prepareStatement(sql.toString());
-//            pstmt.setInt(1, article.getBoardId());
-//            pstmt.setString(2, article.getWriter());
-//            pstmt.setString(3, article.getTitle());
-//            pstmt.setString(4, article.getContent());
-//            pstmt.setString(5, article.getPasswd());
-//            pstmt.executeUpdate();
-//
-//        } finally {
-//            try {
-//                if (pstmt != null) pstmt.close();
-//                if (conn != null) conn.close();
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
+        StringBuilder sql = new StringBuilder();
+
+        sql.append(" INSERT INTO ORDERS(ORDER_NUM, RECEIVER_NAME, RECEIVER_PNUM, RECEIVER_ADDRESS, RECEIVER_DETAIL_ADDRESS, RECEIVER_HP, TOTAL_PRICE, USER_ID)")
+                .append(" VALUES(order_seq.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)");
+
+        Connection conn = connectionFactory.getConnection();
+        PreparedStatement pstmt = null;
+
+        try {
+//            conn.setAutoCommit(true); // 기본값: true
+            pstmt = conn.prepareStatement(sql.toString());
+            pstmt.setString(1, member.getName());
+            pstmt.setString(2, member.getPostNum());
+            pstmt.setString(3, member.getDefaultAddress());
+            pstmt.setString(4, (member.getDetailAddress()));
+            pstmt.setString(5, (member.getPhoneNum()));
+            pstmt.setInt(6, Integer.parseInt(realPrice));
+            pstmt.setString(7, (member.getId()));
+            pstmt.executeUpdate();
+
+        } finally {
+            try {
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    @Override
+    public List<Orders> loadOrder(String userId) throws SQLException {
+        List<Orders> list = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        Connection conn = connectionFactory.getConnection();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        sql.append(" SELECT ORDER_NUM, RECEIVER_NAME, TOTAL_PRICE, ORDER_DATE")
+                .append(" FROM ORDERS")
+                .append(" WHERE USER_ID = ?");
+
+        try {
+            pstmt = conn.prepareStatement(sql.toString());
+            pstmt.setString(1, userId);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Orders order = new Orders();
+                order.setOrderNumber(rs.getInt("ORDER_NUM"));
+                order.setReceiverName(rs.getString("RECEIVER_NAME"));
+                order.setTotalPrice(rs.getInt("TOTAL_PRICE"));
+                order.setRegdate(rs.getString("ORDER_DATE"));
+
+                list.add(order);
+            }
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        return list;
+    }
+
+    public static void main(String[] args) throws SQLException {
+        OrderDao orderDao = new JdbcOrderDao();
+
+//        System.out.println(orderDao.loadOrder("hanzo9997"));
     }
 }
+

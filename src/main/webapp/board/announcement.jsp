@@ -50,13 +50,13 @@
         <div class="container">
             <div class="search-window">
                 <div class="search-wrap">
-                    <select name="type" id="type">
-                        <option value="all">전체</option>
-                        <option value="title">제목</option>
-                        <option value="writer">작성자</option>
+                    <select class="search-type">
+                        <option selected value="all">-검색-</option>
+                        <option value="t">제목</option>
+                        <option value="w">작성자</option>
                     </select>
-                    <input id="search" type="search" name="" placeholder="검색어를 입력해주세요." value="">
-                    <button type="submit" class="btn btn-dark">검색</button>
+                    <input placeholder="검색어를 입력해주세요." class="search-text" value="">
+                    <button class="btn btn-dark search-btn">검색</button>
                 </div>
             </div>
         </div>
@@ -74,6 +74,41 @@
                 </tr>
                 </thead>
                 <tbody>
+                <tr>
+                    <td>10</td>
+                    <th><a href="#!">[공지사항]질의응답 게시판 이용 관련</a></th>
+                    <td>[관리자]</td>
+                    <td>2024.04.07</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <th><a href="#!">[공지사항]게시판 이용 관련</a></th>
+                    <td>[관리자]</td>
+                    <td>2024.04.07</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <th><a href="#!">[공지사항]배송 관련</a></th>
+                    <td>[관리자]</td>
+                    <td>2024.04.07</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <th><a href="#!">[공지사항]상품문의 관련</a></th>
+                    <td>[관리자]</td>
+                    <td>2024.04.07</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <th><a href="#!">[공지사항]이용방법 관련</a></th>
+                    <td>[관리자]</td>
+                    <td>2024.04.07</td>
+                    <td>1</td>
+                </tr>
                 <tr>
                     <td>5</td>
                     <th><a href="#!">[공지사항]질의응답 게시판 이용 관련</a></th>

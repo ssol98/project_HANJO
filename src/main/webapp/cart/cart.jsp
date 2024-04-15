@@ -21,7 +21,32 @@
                 checkbox.checked = selectAll.checked
             })
         }
+        function selectAll(selectAll) {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAll.checked;
+            });
+        }
+
+        function removeSelectedItems() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const itemsToRemove = [];
+            checkboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    itemsToRemove.push(checkbox.parentElement.parentElement);
+                }
+            });
+            itemsToRemove.forEach((item) => {
+                item.remove();
+            });
+        }
+
+        function removeAllItems() {
+            const cartTable = document.querySelector('table tbody');
+            cartTable.innerHTML = '<tr><td colspan="2">장바구니에 상품이 없습니다.</td></tr>';
+        }
     </script>
+
 </head>
 
 <body>
@@ -64,8 +89,8 @@
         </table>
 
         <div id="button_flex">
-            <button id="check_remove">선택삭제</button>
-            <button id="all_remove">모두삭제</button>
+            <button id="check_remove" onclick="removeSelectedItems()">선택삭제</button>
+            <button id="all_remove" onclick="removeAllItems()">모두삭제</button>
             <button id="move_list"><a href="">계속 쇼핑하기</a></button>
             <button id="order"><a href="">주문하기</a></button>
         </div>
