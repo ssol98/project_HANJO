@@ -81,5 +81,3 @@
 ![3조 HANZO 후기없  Repaired](https://github.com/user-attachments/assets/7b78024c-e3e8-4ad6-b482-db55e138535f)
 
 
-[* [CHAL-LAE ERD](https://github.com/didrlgus/springboot-shoppingmall/issues/1)]
-
