@@ -47,7 +47,11 @@
 * 예외처리
 * Git 버전관리
 
-## 🪄프로젝트 시연!
+## 💻프로젝트 시연!
+
+|메인 페이지|
+|------|
+|![myteam](https://github.com/user-attachments/assets/779a4732-5c6c-4952-92c0-43cd624e8e81)|
 
 |로그인|회원가입|
 |------|---|
@@ -75,8 +79,5 @@
 
 ## :link: ERD 설계
 [* [CHAL-LAE ERD](https://github.com/didrlgus/springboot-shoppingmall/issues/1)](https://www.erdcloud.com/d/HvoYGpFbmk8hRs6fT)
-
-메인페이지
-![image](https://github.com/user-attachments/assets/779a4732-5c6c-4952-92c0-43cd624e8e81)
 
 
