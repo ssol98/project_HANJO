@@ -3,8 +3,6 @@ package com.ezen.index.dto;
 public class Category {
 
     private int categoryNumber;
-    // 10 : 스니커즈 , 20 : 더비, 30 : 로퍼
-
     private String categoryName;
     private String categoryInfo;
 
