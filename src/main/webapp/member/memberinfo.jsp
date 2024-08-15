@@ -99,27 +99,6 @@
                     <td>${loginMember.regdate}</td>
                 </tr>
 
-
-<%--                <tr>--%>
-<%--                    <th scope="row">문자 수신 여부</th>--%>
-<%--                    <td>--%>
-<%--                        <input type="radio" id="m-yes" name="mailSubscription" value="yes">--%>
-<%--                        <label for="m-yes">예</label>--%>
-<%--                        <input type="radio" id="m-no" name="mailSubscription" value="no">--%>
-<%--                        <label for="m-no">아니오</label>--%>
-<%--                    </td>--%>
-<%--                </tr>--%>
-
-<%--                <tr>--%>
-<%--                    <th scope="row">메일 수신 여부</th>--%>
-<%--                    <td>--%>
-<%--                        <input type="radio" id="e-yes" name="mailSubscription" value="yes">--%>
-<%--                        <label for="e-yes">예</label>--%>
-<%--                        <input type="radio" id="e-no" name="mailSubscription" value="no">--%>
-<%--                        <label for="e-no">아니오</label>--%>
-<%--                    </td>--%>
-<%--                </tr>--%>
-
             </table>
 
         <%--    footer start --%>
