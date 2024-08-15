@@ -45,12 +45,6 @@
         session.setAttribute("orderList", orderList);
 
         response.sendRedirect(referer);
-//        System.out.println("-------로그인멤버------");
-//        System.out.println(loginMember);
-//        System.out.println("-------로그인멤버------");
-//        System.out.println("-------오더리스트------");
-//        System.out.println(orderList);
-//        System.out.println("-------오더리스트------");
 
         session.removeAttribute("cartItems");
     } else {
