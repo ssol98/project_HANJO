@@ -8,11 +8,6 @@
 <%@ page import="com.ezen.mall.web.common.encription.EzenUtil" %><%--게시글 읽기 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<jsp:useBean id="acList" class="com.ezen.board.dto.ArticleComment" scope="page"/>--%>
-<%--<c:if test="${empty loginMember}">--%>
-<%--    <c:set scope="request" var="message" value="게시판 글읽기는 회원만 가능합니다!"/>--%>
-<%--    <jsp:forward page="/member/login.jsp"/>--%>
-<%--</c:if>--%>
 <%
     Cookie[] cookie = request.getCookies();
     String userId = new String();
