@@ -8,11 +8,6 @@
 <%@ page import="com.ezen.mall.web.common.encription.EzenUtil" %><%--게시글 읽기 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--<c:if test="${empty loginMember}">--%>
-<%--    <c:set scope="request" var="message" value="게시판 글쓰기는 회원만 가능합니다!"/>--%>
-<%--    <c:set var="referer" value="/board/register.jsp" scope="request"/>--%>
-<%--    <jsp:forward page="/member/login.jsp"/>--%>
-<%--</c:if>--%>
 <%
     int boardNum = 20;
     if (request.getParameter("boardNum") != null) {
