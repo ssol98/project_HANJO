@@ -96,7 +96,6 @@ public class JdbcArticleDao implements ArticleDao {
      * @return 검색 목록
      * @throws SQLException
      */
-    //ctrl + shift + u
     public List<Article> findByAll(int rowCount, int boardNum, int requestPage, String type, String value) throws SQLException {
         List<Article> list = new ArrayList<>();
         if (type != null && type.equals("")) {
@@ -474,14 +473,4 @@ public class JdbcArticleDao implements ArticleDao {
     }
 
     public static void main(String[] args) throws SQLException {
-//        JdbcArticleDao jdbcArticleDao = new JdbcArticleDao();
-//        List<Article> test = jdbcArticleDao.findBydAll(10,1,null,null);
-//        System.out.println(test);
-//        int count = jdbcArticleDao.findByArticleCount(10, null, null);
-//        System.out.println(count);
-//        List<Article> test = jdbcArticleDao.findByAll(10, 10, 1,null,null);
-//        System.out.println(test);
-//        Article article = jdbcArticleDao.readArticle(1, 10);
-//        System.out.println(article);
-    }
 }
