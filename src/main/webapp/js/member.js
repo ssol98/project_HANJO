@@ -2,9 +2,6 @@
 const eventRegister = function () {
     document.registerForm.addEventListener("submit", handleSubmitButton);
 
-    // document.querySelector("#id").addEventListener("click", handleIdInput);
-    // document.querySelector("#name").addEventListener("click", handleNameInput);
-
     document.querySelectorAll("form input")
         .forEach(function (input) {
             input.addEventListener("click", handleClickInput);
@@ -20,7 +17,6 @@ const handleSubmitButton = function (event) {
     const passwdInput = event.target.passwd;
     const rePasswdInput = event.target["re-passwd"];
     if (Validator.isEmpty(idInput.value)) {
-        // alert('아이디를 입력하여 주세요.');
         showErrorMessage(idInput, "아이디를 입력하여 주세요.");
         return;
     }
@@ -32,24 +28,19 @@ const handleSubmitButton = function (event) {
     }
 
     if (Validator.isEmpty(emailInput.value)) {
-        // alert('이메일을 입력하여 주세요.');
         showErrorMessage(emailInput, "이메일을 입력하여 주세요.");
         return;
     }
 
     if (Validator.isEmpty(passwdInput.value)) {
        alert('비밀번호를 입력하여 주세요.');
-       //showErrorMessage(passwdInput, "비밀번호를 입력하여 주세요.");
        return;
     }
 
     if (passwdInput.value !== rePasswdInput.value) {
         alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.');
-        //showErrorMessage(passwdInput, "비밀번호와 비밀번호 확인이 일치하지 않습니다.");
         return;
     }
-
-    // 입력데이터 형식 검사 추가 필요...
 
     event.target.submit();
 }
