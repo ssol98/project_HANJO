@@ -123,8 +123,6 @@
 
                                 </form>
 
-<%--                                <p class="pt-3 small text-body-tertiary">--%>
-<%--                                    이미 계정이 있습니까? <a href="/member/login.jsp" class="ms-2 fw-semibold link-underline">로그인</a>--%>
                                 </p>
                             </div>
                         </div>
@@ -132,10 +130,7 @@
                 </div>
             </div>
         </div>
-<%--Contents end--%>
-<%--    &lt;%&ndash;    footer start &ndash;%&gt;--%>
-<%--    <jsp:include page="/module/footer.jsp"/>--%>
-<%--    &lt;%&ndash;    footer end&ndash;%&gt;--%>
+
  </div>
 
 
