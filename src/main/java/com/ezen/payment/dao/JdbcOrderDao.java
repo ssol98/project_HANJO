@@ -33,7 +33,6 @@ public class JdbcOrderDao implements OrderDao {
         PreparedStatement pstmt = null;
 
         try {
-//            conn.setAutoCommit(true); // 기본값: true
             pstmt = conn.prepareStatement(sql.toString());
             pstmt.setString(1, member.getName());
             pstmt.setString(2, member.getPostNum());
@@ -93,9 +92,7 @@ public class JdbcOrderDao implements OrderDao {
     }
 
     public static void main(String[] args) throws SQLException {
-        OrderDao orderDao = new JdbcOrderDao();
 
-//        System.out.println(orderDao.loadOrder("hanzo9997"));
     }
 }
 
