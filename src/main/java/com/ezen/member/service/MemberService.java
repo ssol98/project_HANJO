@@ -23,11 +23,6 @@ public class MemberService {
 
     // 서버 입장에서 제일 먼저 받아보는 곳
     public Member registerMember(Member member) throws Exception {
-        /*System.out.println(member.getPhoneNum());
-        System.out.println(member.getEmail());
-        System.out.println(member.getDetailAddress());
-        System.out.println(member.getDefaultAddress());*/
-        // 데이터 확인용 sout 여기서 null 확인
         memberDao.create(member);
         return memberDao.findById(member.getId());
     }
