@@ -24,9 +24,6 @@ public class JdbcMemberDao implements MemberDao {
         connectionFactory = ConnectionFactory.getInstance();
     }
 
-
-    //--------------------------------------------------------------------------
-
     // 회원 테이블에 회원정보 입력
     public void create(Member member) throws Exception {
         StringBuilder sql = new StringBuilder();
@@ -62,9 +59,7 @@ public class JdbcMemberDao implements MemberDao {
 
     // 회원아이디를 전달받아 회원 상세정보를 반환
     public Member findById(String id) throws SQLException {
-//        System.out.println("------구분--------");  아이디가 잘 들어왓는지 확인을 위함
-//        System.out.println(id);
-//        System.out.println("------구분--------");
+
         Member member = null;
         StringBuilder sql = new StringBuilder();
         sql.append(" SELECT user_id, user_passwd, user_email, user_hp, user_name, user_pnum, default_address, detail_address, TO_CHAR(regdate, 'yyyy-MM-DD HH24:MI:SS') regdate")
@@ -103,7 +98,6 @@ public class JdbcMemberDao implements MemberDao {
         return member;
     }
     
-    ////-----------------------------------------
 
     // 회원아이디와 비밀번호 전달받아 인증 결과 반환
     public boolean findByIdNPasswd(String id, String passwd) throws SQLException {
@@ -131,7 +125,6 @@ public class JdbcMemberDao implements MemberDao {
                 throw new RuntimeException(e);
             }
         }
-//         System.out.println(isMember);
         return isMember;
     }
 
@@ -222,47 +215,6 @@ public class JdbcMemberDao implements MemberDao {
          * ex) 주문번호- 24의 브라운 스니커즈 주문총가격 (항목으로 사용할거면 아이템 가격으로 변경) 주문일시
          *     주문번호- 24의 베이지 스니커드 주문총가격 (,,) 주문일시
          */
-//        List<Order> orders = new ArrayList<>();
-//
-//        StringBuilder sql = new StringBuilder();
-//        sql.append(" SELECT orders.user_id AS order_id, orders.order_date, orders.order_num, orders.total_price, item.item_name")
-//                .append(" FROM orders")
-//                .append(" JOIN order_list ON orders.order_num = order_list.order_num")
-//                .append(" JOIN item ON order_list.item_num = item.item_num")
-//                .append(" WHERE orders.user_id = ?");
-//
-//        Connection con = null;
-//        PreparedStatement pstmt = null;
-//        ResultSet rs = null;
-//
-//        try {
-//            con = connectionFactory.getConnection();
-//            pstmt = con.prepareStatement(sql.toString());
-//            pstmt.setString(1, id);
-//            rs = pstmt.executeQuery();
-//
-//
-//            while (rs.next()) {
-//                Order order = new Order();
-//                order.setOrderId(rs.getString("order_id"));
-//                order.setOrderDate(rs.getString("order_date"));
-//                order.setOrderNum(rs.getInt("order_num"));
-//                order.setTotalPrice(rs.getString("total_price"));
-//                order.setItemName(rs.getString("item_name"));
-//                orders.add(order); // 배열에 추가
-//            }
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        } finally {
-//            try {
-//                if (rs != null) rs.close();
-//                if (pstmt != null) pstmt.close();
-//                if (con != null) con.close();
-//            } catch (SQLException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
-//        return orders;
     }
 
     /**
@@ -278,11 +230,6 @@ public class JdbcMemberDao implements MemberDao {
         try {
             List<Order> orders = memberDao.orderList(userId);
             for (Order order : orders) {
-//                System.out.println("주문 번호: " + order.getOrderNum());
-//                System.out.println("주문 날짜: " + order.getOrderDate());
-//                System.out.println("총 가격: " + order.getTotalPrice());
-//                System.out.println("주문 상품: " + String.join(", ", order.getItemNames()));
-//                System.out.println("------------------------------");
             }
         } catch (SQLException e) {
             System.err.println("데이터베이스 조회 중 에러 발생: " + e.getMessage());
