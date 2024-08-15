@@ -98,9 +98,6 @@
 
         <div class="container text-center">
             <div id="mypage-main" class="row">
-                <%--                    <div class="mypage-image" style="border: 1px solid black"><a href="memberinfo.jsp">이미지</a><br>  &lt;%&ndash; 이미지 구역 구분 위해서 border 지정 해놓음 &ndash;%&gt;--%>
-
-                <%--                    </div>--%>
                 <a href="memberinfo.jsp">
                     <div id="member-info">
                         <br>
@@ -142,16 +139,6 @@
             </thead>
 
             <tbody>
-
-<%--            <c:forEach var="order" items="${orderList}">--%>
-<%--                <tr>--%>
-<%--                    <th scope="row">${order.orderDate}</th>--%>
-<%--                        &lt;%&ndash; 주문번호에 등록된 모든상품이름 출력  <td>${order.itemNames} 등</td> &ndash;%&gt;--%>
-<%--                    <td>[${order.itemNames[0]}..] </td>--%>
-<%--                    <td>${order.totalPrice}원</td>--%>
-<%--                    <td>${order.orderNum}</td>--%>
-<%--                </tr>--%>
-<%--            </c:forEach>--%>
                 <c:forEach var="order" items="${list}">
                     <tr>
                         <th scope="row">${order.orderNumber}</th>
