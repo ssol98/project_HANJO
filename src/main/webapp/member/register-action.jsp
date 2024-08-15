@@ -9,10 +9,9 @@
 
 
 <%request.setCharacterEncoding("utf-8");%>
-<%--bean 생성--%>
+
 <jsp:useBean id="member" class="com.ezen.member.dto.Member" scope="session"/>
 <jsp:setProperty name="member" property="*"/>
-<%--<jsp:setProperty name="member" property="picture" value="defalut.jpg"/>--%>
 
 
 <%
