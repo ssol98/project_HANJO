@@ -1,12 +1,5 @@
 <%@ page import="com.ezen.board.service.BoardService" %>
 <%@ page import="com.ezen.board.service.BoardServiceImpl" %>
-<%--
-  게시글 쓰기 처리
-  User: SHINYJ
-  Date: 2024-03-29
-  Time: 오후 4:18
-  To change this template use File | Settings | File Templates.
---%>
 
 <%request.setCharacterEncoding("utf-8");%>
 
