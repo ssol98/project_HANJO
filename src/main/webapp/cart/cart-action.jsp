@@ -3,7 +3,6 @@
 
 <%
     String item = request.getParameter("item");
-//    String size = request.getParameter("size");
 
     ArrayList<String> cartItems = (ArrayList<String>) session.getAttribute("cartItems");
 
@@ -11,7 +10,6 @@
         cartItems = new ArrayList<>();
     }
     cartItems.add(item);
-//    cartItems.add(size);
     session.setAttribute("cartItems", cartItems);
 %>
 
