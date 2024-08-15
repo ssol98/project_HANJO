@@ -57,12 +57,7 @@
 							<form class="needs-validation" action="/member/login-action.jsp" method="post">
 								<input type="hidden" name="referer" id="referer" value="<%=referer%>">
 								<input type="hidden" name="message" id="referer" value="<%=message%>">
-								<%
-									// 확인을 위함
-//									System.out.println("======밸류에 들어가는 referer값=======");
-//									System.out.println("referer:"+referer);
-//									System.out.println("===================================");
-								%>
+							
 								<div class="input-icon-group mb-3">
 									<span class="input-icon">
 										<i class="bx bx-envelope"></i>
